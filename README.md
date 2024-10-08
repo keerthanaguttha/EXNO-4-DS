@@ -36,23 +36,27 @@ from sklearn.metrics import accuracy_score,confusion_matrix
 data=pd.read_csv("income(1) (1).csv",na_values=["?"])
 data
 ```
+
 ![image](https://github.com/user-attachments/assets/24981339-0501-4a80-b21b-ae7f4051304c)
 
 ```
 data.isnull().sum()
 ```
+
 ![image](https://github.com/user-attachments/assets/ae5762a3-9eb1-4d6b-be19-32b8948b6984)
 
 ```
 missing= data[data.isnull().any(axis=1)]
 missing
 ```
+
 ![image](https://github.com/user-attachments/assets/a87db41c-5c7e-48ce-800c-19f1d4d1b7fb)
 
 ```
 data2=data.dropna(axis=0)
 data2
 ```
+
 ![image](https://github.com/user-attachments/assets/7eeada54-2e56-4c31-b087-6e9ba4034eeb)
 
 ```
@@ -60,6 +64,7 @@ sal=data['SalStat']
 data2['SalStat']=data2['SalStat'].map({' less than or equal to 50,000':0,' greater than 50,000':1})
 print(data2['SalStat'])
 ```
+
 ![image](https://github.com/user-attachments/assets/e7994785-c72b-4655-b240-353df381820b)
 
 ```
@@ -124,17 +129,20 @@ prediction=KNN_classifier.predict(test_x)
 confusionMatrix=confusion_matrix(test_y,prediction)
 print(confusionMatrix)
 ```
+
 ![image](https://github.com/user-attachments/assets/f069202d-84d1-4c88-86c2-50d2aa88b665)
 
 ```
 accuracy_score=accuracy_score(test_y,prediction)
 print(accuracy_score)
 ```
+
 ![image](https://github.com/user-attachments/assets/c7011e1f-2703-416a-9965-5dd64d6bfd33)
 
 ```
 print('Misclassified samples: %d' %  (test_y != prediction).sum())
 ```
+
 ![image](https://github.com/user-attachments/assets/42124bec-18c6-4315-990d-bcebf5585b9f)
 
 ```
